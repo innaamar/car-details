@@ -40,69 +40,7 @@ class Bus extends Car {
     public String getType() {
         return "Bus";
     }
-}
 
-class Triangle {
-    private double a, b, c;
-
-    public Triangle(double a, double b, double c) {
-        if (a >= b + c || b >= a + c || c >= a + b) {
-            throw new IllegalArgumentException("Wrong sides");
-        }
-        setA(a);
-        setB(b);
-        setC(c);
-    }
-
-    public double getA() {
-        return a;
-    }
-
-    public double getB() {
-        return b;
-    }
-
-    public double getC() {
-        return c;
-    }
-
-    public void setA(double side) {
-        if (side > 0) {
-            a = side;
-        } else {
-            throw new IllegalArgumentException("SetA-wrong side");
-        }
-    }
-
-    public void setB(double side) {
-        if (side > 0) {
-            b = side;
-        } else {
-            throw new IllegalArgumentException("SetB-wrong side");
-        }
-    }
-
-    public void setC(double side) {
-        if (side > 0) {
-            c = side;
-        } else {
-            throw new IllegalArgumentException("SetC-wrong side");
-        }
-    }
-
-    public String toString() {
-        return String.format("Triangle a: %.2f b: %.2f c: %.2f perimeter: %.2f area: %.2f\n",  
-                            a,b,c, perimeter(), area() );
-    }
-
-    public double perimeter() {
-        return a + b + c;
-    }
-
-    public double area() {
-        double p = perimeter() / 2;
-        return Math.sqrt(p * (p - a) * (p - b) * (p - c));
-    }
 }
 
 public class Main {
@@ -118,8 +56,5 @@ public class Main {
         for (Car car : cars) {
             System.out.println(car);
         }
-
-        Triangle t1 = new Triangle(3, 4, 6);
-        System.out.println(t1);
     }
 }
